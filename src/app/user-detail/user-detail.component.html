@@ -1,0 +1,40 @@
+
+<form class="userForm" #f = "ngForm">
+  <input type="hidden" name="id" [(ngModel)]="user.id">
+  <div class="userDetails-form">
+    <div class="form-group">
+      <label for="firstname">First Name</label>
+      <input [(ngModel)]="user.name" name="firstname" id="firstname">
+    </div>
+
+    <div class="form-group">
+      <label for="lastname"> Last Name</label>
+      <input [(ngModel)]="user.lastname" name="lastname" id="lastname">
+    </div>
+
+    <div class="form-group">
+      <label for="fiscalcode"> Fiscal Code</label>
+      <input [(ngModel)]="user.cf" name="fiscalcode" id="fiscalcode">
+    </div>
+
+    <div class="form-group">
+      <label for="phone"> Phone</label>
+      <input [(ngModel)]="user.telefono" name="phone" id="phone">
+    </div>
+
+    <div class="form-group">
+      <label for="email"> Email</label>
+      <input [(ngModel)]="user.email" name="email" id="email" type="email">
+    </div>
+
+    <div class="form-group">
+      <label for="age"> Age</label>
+      <input [(ngModel)]="user.eta" name="age" id="age" type="number">
+    </div>
+
+    <div class="form-group form-footer">
+      <button class="btn-save" (click)="saveUser()"> SAVE</button>
+      <button class="reset" (click)="resetForm(f.form)"> Reset</button>
+    </div>
+  </div>
+</form>

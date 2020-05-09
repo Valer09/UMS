@@ -1,0 +1,22 @@
+<div class="table-container">
+  <table class="table" xmlns="http://www.w3.org/1999/html">
+    <caption>Users</caption>
+
+    <tr>
+      <th>Name</th>
+      <th>Lastname</th>
+      <th>CF</th>
+      <th>Email</th>
+      <th>Phohe</th>
+      <th>Age</th>
+      <th>Province</th>
+      <th>Actions</th>
+
+    </tr>
+
+    <tr app-user *ngFor="let user of users" [user-data] = "user"
+        (onDeleteUser) = "onDeleteUser($event)"
+        (onSelectUser)="onSelectUser($event)">
+    </tr>
+  </table>
+</div>
