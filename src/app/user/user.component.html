@@ -1,11 +1,21 @@
 <td>{{user.name | json}}</td>
 <td>{{user.lastname | json}}</td>
-<td>{{user.cf | json}}</td>
 <td>{{user.email | json}}</td>
 <td>{{user.telefono | json}}</td>
-<td>{{user.eta | json}}</td>
 <td>{{user.provincia | json}}</td>
-<td>
-  <button class="update" (click)="updateUser()"> EDIT </button>
-  <button class="delete" (click)="deleteUser()"> DELETE </button>
+
+
+<td class="buttons">
+  <div class="row">
+    <div class="col-sm-4">
+      <button class="btn btn-primary btn-sm" (click)="showUserDetail()">   <fa-icon [icon]="faInfo" fixed="true" ></fa-icon> </button>
+    </div>
+    <div class="col-sm-4">
+      <button class="btn btn-primary btn-sm" (click)="updateUser()">   <fa-icon [icon]="faPencilAlt" fixed="true"></fa-icon> </button>
+    </div>
+    <div class="col-sm-4">
+      <button class="btn btn-danger" (click)="deleteUser()">   <fa-icon [icon]="faTrashAlt"  fixed="true"></fa-icon> </button>
+    </div>
+  </div>
 </td>
+

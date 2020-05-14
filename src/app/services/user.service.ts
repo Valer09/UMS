@@ -40,7 +40,9 @@ export class UserService{
   getUsers(){
     return this.users;
   }
-
+  getUser(id: number): User{
+    return this.users.find(user => user.id === id);
+  }
   deleteUser(user: User){
     let index = this.users.indexOf(user);
     if (index >= 0){
@@ -50,12 +52,12 @@ export class UserService{
 
   updateUser(user: User){
     const idx = this.users.findIndex((v) => v.id === user.id);
-    alert(idx);
     if (idx !== -1)
       this.users[idx] = user;
   }
 
   createUser(user: User){
+    user.id = this.users.length + 1;
     this.users.splice(0, 0, user);
   }
 }
