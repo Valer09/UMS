@@ -1,44 +1,21 @@
 import {Injectable} from '@angular/core';
 import {User} from '../classes/User';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable()
 export class UserService{
-  users: User[] = [
-    {
-      id: 1,
-      name : 'Valerio',
-      lastname: 'Marchitelli',
-      email: 'asd@asd.it',
-      cf: 'ASDJLKIJ8768KJLLNNJ',
-      provincia: 'AQ',
-      telefono: '33333333333',
-      eta: 28
-    },
-    {
-      id: 2,
-      name : 'Valerioasas',
-      lastname: 'Marchitellias',
-      email: 'asd@asdasas.it',
-      cf: 'ASDJLKIJ8768KJLLs',
-      provincia: 'AQasas',
-      telefono: '333333333311',
-      eta: 22
-    },
-    {
-      id: 3,
-      name : 'Lino',
-      lastname: 'Banfi',
-      email: 'asd@asdasas.it',
-      cf: 'ASDJLKIJ8768KJNas',
-      provincia: 'AQasas',
-      telefono: '333333333311',
-      eta: 22
-    }
-  ];
-  constructor() {
+  users: User[] = [] ;
+  private APIURL = 'http://localhost:8000/users';
+
+  constructor(private http: HttpClient) {
+
   }
   getUsers(){
-    return this.users;
+    return this.http.get(this.APIURL);
+  }
+
+  getUser(id: number){
+    return this.http.get(this.APIURL + '/' + id);
   }
 
   deleteUser(user: User){
