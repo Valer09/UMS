@@ -4,37 +4,38 @@
   <div class="userDetails-form">
     <div class="form-group">
       <label for="firstname">First Name</label>
-      <input [(ngModel)]="user.name" name="firstname" id="firstname">
+      <input [(ngModel)]="user.name" class="form-control" name="firstname" id="firstname">
     </div>
 
     <div class="form-group">
       <label for="lastname"> Last Name</label>
-      <input [(ngModel)]="user.lastname" name="lastname" id="lastname">
+      <input [(ngModel)]="user.lastname" class="form-control" name="lastname" id="lastname">
     </div>
 
     <div class="form-group">
       <label for="fiscalcode"> Fiscal Code</label>
-      <input [(ngModel)]="user.cf" name="fiscalcode" id="fiscalcode">
+      <input [(ngModel)]="user.cf" class="form-control" name="fiscalcode" id="fiscalcode">
     </div>
 
     <div class="form-group">
       <label for="phone"> Phone</label>
-      <input [(ngModel)]="user.telefono" name="phone" id="phone">
+      <input [(ngModel)]="user.telefono" class="form-control" name="phone" id="phone">
     </div>
 
     <div class="form-group">
       <label for="email"> Email</label>
-      <input [(ngModel)]="user.email" name="email" id="email" type="email">
+      <input [(ngModel)]="user.email" class="form-control" name="email" id="email" type="email">
     </div>
 
     <div class="form-group">
       <label for="age"> Age</label>
-      <input [(ngModel)]="user.eta" name="age" id="age" type="number">
+      <input [(ngModel)]="user.eta" class="form-control" name="age" id="age" type="number">
     </div>
 
-    <div class="form-group form-footer">
-      <button class="btn-save" (click)="saveUser()"> SAVE</button>
-      <button class="reset" (click)="resetForm(f.form)"> Reset</button>
+    <div class="form-group form-footer text-center">
+      <button class="btn btn-secondary" (click)="saveUser()"> SAVE</button>
+      <button class="btn btn-success" (click)="resetForm(f.form)"> Reset</button>
+      <button (click)="backToUsers()"  class ="btn btn-primary"> BACK  </button>
     </div>
   </div>
 </form>

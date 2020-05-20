@@ -1,20 +1,10 @@
 
-td{
-  padding:5px;
-  border: 1px solid #fff;
-  background-color:silver;
-  color: darkred;
+.buttons{
+  width: 130px;
+  text-align: center;
 }
-button{
-  padding: 5px;
-  border: 1px solid #222;
-  width:80px;
-}
-button.delete{
-  background: darkred;
-  color:white;
-}
-button.update{
-  background: darkgreen;
-  color:white;
+
+.buttons button{
+  padding: 1px;
+  width: 35px;
 }

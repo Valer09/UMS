@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {User} from './classes/User';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-root',
