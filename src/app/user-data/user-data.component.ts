@@ -15,9 +15,13 @@ export class UserDataComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private userService: UserService, private router: Router) { }
 
-  ngOnInit(): void {
-    this.user = new User();
-    this.route.params.subscribe(p => this.user = this.userService.getUser(+p.id));
+  ngOnInit() {
+    this.route.params.subscribe(p => {
+
+      this.userService.getUser(+p.id)
+        /* tslint:disable:no-string-literal */
+        .subscribe(response => this.user = response['data']);
+    });
   }
   backToUsers(){
     this.router.navigate(['users']);

@@ -17,11 +17,8 @@ export class UserService{
   getUser(id: number){
     return this.http.get(this.APIURL + '/' + id);
   }
-  getUser(id: number): User{
-    return this.users.find(user => user.id === id);
-  }
   deleteUser(user: User){
-    let index = this.users.indexOf(user);
+    const index = this.users.indexOf(user);
     if (index >= 0){
       this.users.splice(index, 1);
     }

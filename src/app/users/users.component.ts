@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {UserService} from '../services/user.service';
 import {User} from '../classes/User';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-users',
@@ -10,7 +11,7 @@ import {User} from '../classes/User';
 export class UsersComponent implements OnInit {
 
   title = 'Users';
-  users: User [] = [];
+  users: User[] = [];
   @Output() updateUser = new EventEmitter <User>();
 
 
@@ -19,8 +20,10 @@ export class UsersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.users = this.userService.getUsers().subscribe(
-      response => this.users = response.data
+    this.userService.getUsers().subscribe(
+      (response: any) => {
+        return this.users = response.data;
+      }
     );
   }
 

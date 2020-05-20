@@ -12,6 +12,7 @@ export class UserDetailComponent implements OnInit {
 
   userService: UserService;
   private userCopy: User;
+  // tslint:disable-next-line:variable-name
   private __user: User;
 
   @Input() set user(user: User){
@@ -32,11 +33,14 @@ export class UserDetailComponent implements OnInit {
         if (!params.id){
           return;
         }
-        this.user = this.userService.getUser(+params.id);
+        this.userService.getUser(+params.id).subscribe(
+          /* tslint:disable:no-string-literal */
+          response => this.user = response['data']
+        );
       }
-    );
+    )
   }
-  saveUser() {
+saveUser() {
     if (this.user.id > 0) {
       this.userService.updateUser(this.user);
     }
@@ -45,14 +49,14 @@ export class UserDetailComponent implements OnInit {
     }
     this.router.navigate(['users']);
   }
-  resetForm(form){
+resetForm(form) {
     if (this.user.id === 0){
       this.user = new User();
     }else{
       this.user = this.userCopy;
     }
   }
-  backToUsers(){
+backToUsers() {
     this.router.navigate(['users']);
   }
 
