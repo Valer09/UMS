@@ -1,0 +1,38 @@
+<h2> {{title}}</h2>
+
+<table class="table table-dark">
+
+  <tr>
+    <th>Name</th>
+    <td>{{user.name}}</td>
+  </tr>
+  <tr>
+    <th>Lastname</th>
+    <td>{{user.lastname}}</td>
+  </tr>
+  <tr>
+    <th>CF</th>
+    <td>{{user.cf}}</td>
+  </tr>
+  <tr>
+    <th>Telefono</th>
+    <td>{{user.telefono}}</td>
+  </tr>
+  <tr>
+    <th>Email</th>
+    <td>{{user.email}}</td>
+  </tr>
+  <tr>
+    <th>Provincia</th>
+    <td>{{user.provincia}}</td>
+  </tr>
+  <tfoot>
+    <tr>
+      <td colspan="2" class="text-center">
+        <button (click)="backToUsers()"  class ="btn btn-primary"> BACK
+      </button>
+      </td>
+    </tr>
+  </tfoot>
+
+</table>
