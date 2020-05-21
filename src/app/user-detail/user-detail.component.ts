@@ -41,14 +41,34 @@ export class UserDetailComponent implements OnInit {
     )
   }
 saveUser() {
-    if (this.user.id > 0) {
-      this.userService.updateUser(this.user);
-    }
-    else {
-      this.userService.createUser(this.user);
+  if (this.user.id > 0) {
+    this.updateUser(this.user);
+  } else {
+    this.createUser(this.user);
+  }
+}
+updateUser(user: User) {
+  this.userService.updateUser(this.user).subscribe(response => {
+    if (response['success']) {
+      alert('User ' + user.name + 'modificato correttamente');
+    } else {
+      alert(response['message']);
     }
     this.router.navigate(['users']);
-  }
+  });
+}
+createUser(user: User){
+  this.userService.createUser(this.user).subscribe(response => {
+    if (response['success']){
+      alert('User ' + user.name + 'creato correttamente');
+    }
+    else{
+      alert(response['message']);
+    }
+    this.router.navigate(['users']);
+  });
+}
+
 resetForm(form) {
     if (this.user.id === 0){
       this.user = new User();
@@ -59,5 +79,4 @@ resetForm(form) {
 backToUsers() {
     this.router.navigate(['users']);
   }
-
 }

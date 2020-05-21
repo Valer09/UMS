@@ -1,23 +1,23 @@
 import {UserInterface} from '../interfaces/userInterface';
 
 export class User implements User{
-  cf: string;
+  fiscalcode: string;
   email: string;
-  eta: number;
+  age: number;
   id: number;
   lastname: string;
   name: string;
-  provincia: string;
-  telefono: string;
+  province: string;
+  phone: string;
 
   constructor() {
-    this.cf = '';
+    this.fiscalcode = '';
     this.email = '';
-    this.eta = 18;
+    this.age = 18;
     this.id = 0;
     this.lastname = '';
     this.name = '';
-    this.provincia = '';
-    this.telefono = '';
+    this.province = '';
+    this.phone = '';
   }
 }

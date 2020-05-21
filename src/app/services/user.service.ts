@@ -18,21 +18,16 @@ export class UserService{
     return this.http.get(this.APIURL + '/' + id);
   }
   deleteUser(user: User){
-    const index = this.users.indexOf(user);
-    if (index >= 0){
-      this.users.splice(index, 1);
-    }
+    return this.http.delete(this.APIURL + '/' + user.id);
   }
 
   updateUser(user: User){
-    const idx = this.users.findIndex((v) => v.id === user.id);
-    if (idx !== -1)
-      this.users[idx] = user;
+    user['_method'] = 'PUT';
+    return this.http.post(this.APIURL + '/' + user.id, user );
   }
 
   createUser(user: User){
-    user.id = this.users.length + 1;
-    this.users.splice(0, 0, user);
+    return this.http.post(this.APIURL , user );
   }
 }
 

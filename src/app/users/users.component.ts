@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {UserService} from '../services/user.service';
 import {User} from '../classes/User';
 import {Subscription} from 'rxjs';
@@ -27,9 +27,26 @@ export class UsersComponent implements OnInit {
     );
   }
 
+  refreshUsers(){
+    this.userService.getUsers().subscribe(
+      (response: any) => {
+        return this.users = response.data;
+      }
+    );
+  }
+
   onDeleteUser(user: User){
-    alert(user.name);
-    this.userService.deleteUser(user);
+
+    this.userService.deleteUser(user).subscribe(
+      (response: any) => {
+        this.userService.getUsers().subscribe(
+          (r: any) => {
+            return this.users = r.data;
+          }
+        );
+        alert(response['message']);
+    });
+    this.ngOnInit();
   }
 
   onSelectUser(user: User){

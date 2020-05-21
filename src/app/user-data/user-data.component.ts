@@ -17,7 +17,6 @@ export class UserDataComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(p => {
-
       this.userService.getUser(+p.id)
         /* tslint:disable:no-string-literal */
         .subscribe(response => this.user = response['data']);
