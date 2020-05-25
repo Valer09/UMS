@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { UsersComponent } from './users/users.component';
 import {UserService} from './services/user.service';
@@ -14,33 +13,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalBasicComponent } from './modal-basic/modal-basic.component';
 
 // routes section
-import {RouterModule, Routes} from '@angular/router';
 import { UserDataComponent } from './user-data/user-data.component';
-const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'users',
-    pathMatch: 'full',
-  }
-  ,
-  {
-    path: 'users',
-    component: UsersComponent
-  }
-  ,
-  {
-    path: 'users/new',
-    component: UserDetailComponent
-  },
-  {
-    path: 'users/:id/edit',
-    component: UserDetailComponent
-  },
-  {
-    path: 'users/:id',
-    component: UserDataComponent
-  }
-];
+import {RoutingModuleModule} from './routing-module.module';
+import {AuthService} from './services/auth.service';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+
 
 @NgModule({
   declarations: [
@@ -52,6 +30,8 @@ const routes: Routes = [
     NavComponent,
     ModalBasicComponent,
     UserDataComponent,
+    LoginComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,10 +39,9 @@ const routes: Routes = [
     HttpClientModule,
     FontAwesomeModule,
     NgbModule,
-    RouterModule.forRoot(routes),
-
+    RoutingModuleModule
   ],
-  providers: [UserService],
+  providers: [UserService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
