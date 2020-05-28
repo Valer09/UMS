@@ -37,6 +37,9 @@ export class NavComponent implements OnInit {
     );
   }
 
+  getUsername(){
+    return this.username;
+  }
   logIn(event){
     event.preventDefault();
     this.router.navigate(['login']);
@@ -55,6 +58,10 @@ export class NavComponent implements OnInit {
 
   ngOnInit(): void {
     this.isUserLoggedIn = this.auth.isUserLoggedIn();
+    if(this.isUserLoggedIn){
+      const user = this.auth.getUser();
+      this.username = user.name;
+    }
   }
   newUser(){
     this.onNewUser.emit();

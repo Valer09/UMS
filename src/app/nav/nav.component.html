@@ -37,8 +37,8 @@
         </a>
       </li>
 
-      <li class="nav-item" *ngIf="isUserLogged()">
-        {{username}}
+      <li class="nav-item nav-link" *ngIf="isUserLogged()">
+        {{getUsername()}}
       </li>
       <li class="nav-item text-nowrap">
         <a class="nav-link" *ngIf="isUserLogged()" (click)="logout($event)" style="cursor: pointer">

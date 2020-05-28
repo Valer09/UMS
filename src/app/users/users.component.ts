@@ -44,13 +44,13 @@ export class UsersComponent implements OnInit {
             return this.users = r.data;
           }
         );
-        alert(response['message']);
+        alert(response.message);
     });
     this.ngOnInit();
   }
 
   onSelectUser(user: User){
-    const userCopy = Object.assign({},user);
+    const userCopy = Object.assign({}, user);
     this.updateUser.emit(userCopy);
   }
 
