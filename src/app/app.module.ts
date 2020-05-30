@@ -11,8 +11,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavComponent } from './nav/nav.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalBasicComponent } from './modal-basic/modal-basic.component';
-
-// routes section
 import { UserDataComponent } from './user-data/user-data.component';
 import {RoutingModuleModule} from './routing-module.module';
 import {AuthService} from './services/auth.service';
