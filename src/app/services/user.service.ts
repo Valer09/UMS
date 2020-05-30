@@ -6,6 +6,7 @@ import {environment} from '../../environments/environment';
 
 @Injectable()
 export class UserService{
+
   users: User[] = [] ;
   // LOCALE: private APIURL = 'http://localhost:8000/users';
   private APIURL = environment.APIURL;
