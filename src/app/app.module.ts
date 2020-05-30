@@ -16,7 +16,7 @@ import { ModalBasicComponent } from './modal-basic/modal-basic.component';
 import { UserDataComponent } from './user-data/user-data.component';
 import {RoutingModuleModule} from './routing-module.module';
 import {AuthService} from './services/auth.service';
-import { LoginComponent } from "./login/login.component";
+import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 
 

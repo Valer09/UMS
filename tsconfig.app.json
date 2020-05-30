@@ -13,5 +13,8 @@
   ],
   "angularCompilerOptions": {
     "enableIvy": false
-  }
+  },
+  "types": [
+    "node"
+  ]
 }
