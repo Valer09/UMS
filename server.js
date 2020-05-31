@@ -6,7 +6,7 @@ const app = express();
 app.use(express.static('./dist/ums'));
 
 app.get('/*', function(req, res){
-  res.sendFile(path.join(__dirname, '/dist/ums/index.hmtl'));
+  res.sendFile(path.join(__dirname, '/dist/ums/src/index.hmtl'));
 });
 
 // Start the app by listening on the default Heroku port
