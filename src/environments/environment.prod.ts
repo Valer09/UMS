@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  APIURL: 'https://radiant-thicket-46420.herokuapp.com/users',
-  APIAUTH: 'https://radiant-thicket-46420.herokuapp.com/api/auth/'
+  APIURL: 'https://warm-savannah-09967.herokuapp.com/users',
+  APIAUTH: 'https://warm-savannah-09967.herokuapp.com/api/auth/'
 };
